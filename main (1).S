@@ -1,12 +1,6 @@
 #
 # Author: Logan Bowers
-# Description: This program uses a mySort subroutine that uses
-#   a mySwap subroutine to sort an array of values.
-# Register Usage: 
-# rax and rbx used for exit program system calls
-# rsp is the stack pointer
-# More register usage documented in subroutine headers below
-#
+# Selection sort Assembly implementation
 
 .equ NUM_ELEMENTS, 10
 .data
@@ -28,7 +22,6 @@ main:
 # Parameters
 #   The memory address of an array and an int for 
 #   the number of elements in that array
-# Returns: Nothing
 # Register usage:
 #   rbp points to stack ptr rsp, 
 #   rax holds current minimum, and then is used to get reference to myArray 
@@ -40,10 +33,8 @@ main:
 #   r10 holds NUM_ELEMENTS value
 #   r11 holds memory address of myArray[currentMin] (myArray at rax)
 #   r12 used to get reference to myArray at index i, then pushed onto stack
-#       for mySwap call 
-#   
-#
-#
+#       for mySwap call
+
 .type mySort, @function
 mySort:
     pushq %rbp
